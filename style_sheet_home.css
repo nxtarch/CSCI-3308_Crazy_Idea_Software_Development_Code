@@ -1,0 +1,8 @@
+#searchBar{
+	position: absolute;
+	margin: 0 auto;
+	top: 50%;
+	bottom:50%;
+	left: 30%;
+	width: 430px;
+}
