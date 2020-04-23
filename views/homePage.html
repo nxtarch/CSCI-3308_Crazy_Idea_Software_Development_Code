@@ -11,13 +11,145 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script>
+    $(document).ready(function(){
+      $(".default_option").click(function(){
+        $(".dropdown ul").toggleClass("active");
+      });
+      $(".dropdown ul li").click(function(){
+        var text = $(this).text();
+        $(".default_option").text(text);
+        $(".dropdown ul").removeClass("active");
+      })
+
+    });
+    function addChecked(obj){
+      if (typeof obj.checked != undefined){
+        obj.checked = 'true';
+      }
+      else{
+        obj.checked= 'false';
+      }
+    }
+
+  </script>
     <style>
     table, th, td {
       border: 1px solid black;
     }
     body{
       font-family: 'Varela Round', sans-serif;
+      background: #e4eefa;
     }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  .wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.wrapper .search_box{
+  width: 500px;
+  background: #fff;
+  height: 65px;
+  border-radius: 5px;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+.wrapper .search_box .dropdown{
+  width: 150px;
+  border-right: 2px solid #dde2f1;
+  color: #9fa3b1;
+  position: relative;
+  cursor: pointer;
+}
+.wrapper .search_box .dropdown .default_option{
+  text-transform: uppercase;
+  padding: 13px 15px;
+  font-size: 14px;
+  user-select: none;
+}
+
+
+.wrapper .search_box .dropdown ul{
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  background: #fff;
+  width: 150px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 8px 8px 6px -10px #b3c6ff;
+  display: none;
+}
+
+.wrapper .search_box .dropdown ul.active{
+  display:block;
+}
+.wrapper .search_box .dropdown ul li{
+  padding-bottom: 20px;
+  user-select: none;
+}
+
+.wrapper .search_box .dropdown ul li:last-child{
+  padding-bottom: 0;
+}
+
+.wrapper .search_box .dropdown ul li:hover{
+  color: #6f768d;
+}
+
+.wrapper .search_box .dropdown:before{
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: 8px solid;
+  border-color: #5078ef transparent transparent transparent;
+}
+
+.wrapper .search_box .search_field{
+  width: 350px;
+  height: 100%;
+  position: relative;
+}
+
+.wrapper .search_box .search_field .input{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 38px;
+  color: #6f768d;
+}
+.wrapper .search_box .search_field .fas{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: #5078ef;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder{
+  color: #9fa3b1;
+}
+::-moz-input-placeholder{
+  color: #9fa3b1;
+}
+::-ms-input-placeholder{
+  color: #9fa3b1;
+}
+
 
     </style>
 
@@ -37,17 +169,23 @@
 
       <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto navbar-left">
+            <form action='/homepage' method="GET">
             <li class="nav-item active">
-              <a class="nav-link" href="homePage.html">Home Page</a>
+              <a class="nav-link" href="homepage">Home Page</a>
             </li>
+          </form>
+          <form action='/reviewPage' method = "GET">
             <li class="nav-item">
-              <a class="nav-link" href="reviewPage.html">Review a Meal</a>
+              <a class="nav-link" href="reviewPage_new">Review a Meal</a>
             </li>
+          </form>
           </ul>
           <ul class="navbar-nav">
+            <form action='/profilePage' method="GET">
             <li class="nav-item">
-              <a class="nav-link" href="profilePage.html">Profile Page</a>
+              <a class="nav-link" href="profilePage">Profile Page</a>
             </li>
+          </form>
             <div class="text-center">
               <a href="#myModal" class="btn btn-info" data-toggle="modal" onclick="openModal()">Login/Sign Up</a>
             </div>
@@ -55,8 +193,13 @@
         </div>
       </nav>
 
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container;float:left;">
+            <h1>Welcome to Mealbot!</h1>
+        </div>
+      </div>
 
-    <div id="myModal" class="modal fade">
+     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-login">
         <div class="modal-content">
           <div class="modal-header">
@@ -101,6 +244,34 @@
         </div>
       </div>
     </div>
+
+
+  <form action='/homepage' method = 'POST' >
+ <div class="wrapper">
+    <div class="search_box">
+      <div class="dropdown">
+        <div class="default_option">All</div>
+        <ul>
+          <li>Allergies</li>
+           <input type="radio" id="dairyAllergy" name="Dairy" onclick="addChecked(this)">
+           <label for ="dairyAllergy"> Dairy </label><br>
+           <input type="radio" id="peanutAllergy" name="Peanuts" onclick="addChecked(this)">
+           <label for ="peanutAllergy"> Peanuts</label><br>
+           <input type="radio" id="soyAllergy" name="Soy" onclick="addChecked(this)">
+           <label for ="soyAllergy"> Soy</label><br>
+          <li>item2</li>
+          <li>item3</li>
+        </ul>
+      </div>
+      <div class="search_field">
+        <input type="text" class="input" placeholder="Search" name="searchBar_input">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+  </div>
+</form>
+   <div id ='cardResult'>
+   </div>
   </body>
 
 </html>
