@@ -18,10 +18,10 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
       <a class="navbar-brand" href="homePage.html">
-      <img class="rounded-circle" src="../resources/img/robotlogo.jpg" alt="" width="30" height="30">
+      <img class="rounded-circle" src="../resources/img/robotlogo.jpg" alt="logo" width="40" height="40">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,16 +67,16 @@
               Username: *username*
             </div>
             <div class="card-body">
-              <button type="button" class="btn btn-primary mb-2">Change Username</button>
+              <button type="button" class="btn btn-primary mb-2" id="changeUsernamebtn" onClick="changeUserName()">Change Username</button>
               <div class="form-group">
                 <input type="text" class="form-control" name="userName" placeholder="New Username"
-                  required="required">
+                  required="required" id="newUsernameForm" disabled>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" name="userName" placeholder="Confirm New Username"
-                  required="required">
+                  required="required" id="confirmUsernameForm" disabled>
               </div>
-              <button type="button" class="btn btn-primary">Save Changes</button>
+              <button type="button" class="btn btn-primary" id="saveUsernamebtn" disabled onClick="saveUserName()">Save Changes</button>
             </div>
           </div>
         </div>
@@ -86,20 +86,20 @@
               Would you like to change your password?
             </div>
             <div class="card-body">
-              <button type="button" class="btn btn-primary mb-2">Change Password</button>
+              <button type="button" class="btn btn-primary mb-2" id="changePSWbtn" onClick="changePSW()">Change Password</button>
               <div class="form-group mb-4">
                 <input type="text" class="form-control" name="password" placeholder="Current Password"
-                  required="required">
+                  required="required" id="currPswForm" disabled>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" name="userName" placeholder="New Password"
-                  required="required">
+                  required="required" id="newPswForm" disabled>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" name="userName" placeholder="Confirm New Password"
-                  required="required">
+                  required="required" id="confirmPswForm" disabled>
               </div>
-              <button type="button" class="btn btn-primary">Save Changes</button>
+              <button type="button" class="btn btn-primary"id="savePSWbtn" disabled onClick="savePSW()">Save Changes</button>
             </div>
           </div>
         </div>
@@ -117,27 +117,27 @@
                   </h6>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">Dairy
+                          <input type="checkbox" class="form-check-input" id="dairyBox" value="" disabled>Dairy
                         </label>
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">Nuts
+                          <input type="checkbox" class="form-check-input" id="nutsBox" value="" disabled>Nuts
                         </label>
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">Seafood
+                          <input type="checkbox" class="form-check-input" id="seafoodBox" value="" disabled>Seafood
                         </label>
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">Gluten
+                          <input type="checkbox" class="form-check-input" id="glutenBox" value="" disabled>Gluten
                         </label>
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">Soy
+                          <input type="checkbox" class="form-check-input" id="soyBox" value="" disabled>Soy
                         </label>
                       </div>
               </div>
@@ -146,25 +146,27 @@
                   Preferences:
                 </h6>
                 <form action="/action_page.php">
+                  <div class="form-group">
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">Vegetarian
+                      <input type="checkbox" class="form-check-input" id="vegetarianBox" value="" disabled>Vegetarian
                     </label>
                   </div>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">Vegan
+                      <input type="checkbox" class="form-check-input" id="veganBox" value="" disabled>Vegan
                     </label>
                   </div>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">Kosher
+                      <input type="checkbox" class="form-check-input" id="kosherBox" value="" disabled>Kosher
                     </label>
                   </div>
+                </div>
                 </form>
               </div>
-              <button type="button" class="btn btn-primary mr-sm-2">Change Preferences</button>
-              <button type="button" class="btn btn-primary">Save Changes</button>
+              <button type="button" class="btn btn-primary mr-sm-2" id="changePreferencesbtn" onClick="changePrefs()">Change Settings</button>
+              <button type="button" class="btn btn-primary" id="savePreferencesbtn" onClick="savePrefs()"disabled>Save Changes</button>
             </div>
 
           </div>
