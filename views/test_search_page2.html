@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <title>
+   Home
+  </title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+  <script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+  </script>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" rel="stylesheet"/>
+  <link href="/static/stylesheet/pagestyle.css" rel="stylesheet" type="text/css"/>
+  <script>
+   $(document).ready(function(){
+      $(".default_option").click(function(){
+        $(".dropdown ul").toggleClass("active");
+      });
+      $(".dropdown ul li").click(function(){
+        var text = $(this).text();
+        $(".default_option").text(text);
+        $(".dropdown ul").removeClass("active");
+      })
+
+    });
+    function addChecked(obj){
+      if (typeof obj.checked != undefined){
+        obj.checked = 'true';
+      }
+      else{
+        obj.checked= 'false';
+      }
+    }
+  </script>
+  <script src="/js/signup.js">
+  </script>
+  <style>
+   table, th, td {
+      border: 1px solid black;
+    }
+    body{
+      font-family: 'Varela Round', sans-serif;
+      background: url('/static/background_food.jpg');
+    }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  .wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.wrapper .search_box{
+  width: 500px;
+  background: #fff;
+  height: 65px;
+  border-radius: 5px;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+.wrapper .search_box .dropdown{
+  width: 150px;
+  border-right: 2px solid #dde2f1;
+  color: #9fa3b1;
+  position: relative;
+  cursor: pointer;
+}
+.wrapper .search_box .dropdown .default_option{
+  text-transform: uppercase;
+  padding: 13px 15px;
+  font-size: 14px;
+  user-select: none;
+}
+
+
+.wrapper .search_box .dropdown ul{
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  background: #fff;
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 8px 8px 6px -10px #b3c6ff;
+  display: none;
+}
+
+.wrapper .search_box .dropdown ul.active{
+  display:block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+.wrapper .search_box .dropdown ul li{
+  padding-bottom: 10px;
+  user-select: none;
+}
+
+.wrapper .search_box .dropdown ul li:last-child{
+  padding-bottom: 0;
+}
+
+.wrapper .search_box .dropdown ul li:hover{
+  color: #6f768d;
+}
+
+.wrapper .search_box .dropdown:before{
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  border: 8px solid;
+  border-color: #5078ef transparent transparent transparent;
+}
+
+.wrapper .search_box .search_field{
+  width: 350px;
+  height: 100%;
+  position: relative;
+}
+
+.wrapper .search_box .search_field .input{
+  width: 100%;
+  height: 100%;
+  right: 10px;
+  border: 0;
+  font-size: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: #6f768d;
+}
+.wrapper .search_box .search_field .fas{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: #5078ef;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder{
+  color: #9fa3b1;
+}
+::-moz-input-placeholder{
+  color: #9fa3b1;
+}
+::-ms-input-placeholder{
+  color: #9fa3b1;
+}
+table, th, td {
+  border: 1px solid black;
+}
+body{
+  font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+h1{
+  font-size: 300%;
+
+}
+.navbar
+{
+  background-color:#ff8000;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top:5px;
+}
+
+.jumbotron {
+  display: grid;
+max-height: 100px;
+align-content: center;
+padding-left: 80px;
+}
+
+.modal-login {
+    color: #636363;
+    width: 350px;
+}
+.modal-login .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+    border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-login .modal-footer {
+    background: #ecf0f1;
+    border-color: #dee4e7;
+    text-align: center;
+    justify-content: center;
+    margin: 0 -20px -20px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.modal-login .modal-footer a {
+    color: #999;
+}
+.modal-login .avatar {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #60c7c1;
+    padding: 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+    width: 100%;
+}
+.modal-login.modal-dialog {
+    margin-top: 80px;
+}
+.modal-login .btn {
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: #45aba6;
+    outline: none;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: '\2713';
+}
+
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: '\00D7';
+}
+.carousel-control-prev {
+  margin: auto;
+}
+  </style>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+   <a class="navbar-brand" href="homePage.html">
+    <img alt="logo" class="rounded-circle" height="40" src="/static/robotlogo.jpg" width="40"/>
+   </a>
+   <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarText" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon">
+    </span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+     <form action="/homepage" method="POST">
+      <li class="nav-item">
+       <a class="nav-link" href="homepage">
+        Home Page
+       </a>
+      </li>
+     </form>
+     <form action="/reviewPage" method="POST">
+      <li class="nav-item">
+       <a class="nav-link" href="reviewPage">
+        Review a Meal
+       </a>
+      </li>
+     </form>
+    </ul>
+    <ul class="navbar-nav">
+     <form action="/profilePage" method="POST">
+      <li class="nav-item active mr-sm-2">
+       <a class="nav-link" href="profilePage">
+        Profile Page
+       </a>
+      </li>
+     </form>
+     <div class="text-center mr-sm-2" id="divSignUP">
+      <a class="btn btn-info" data-toggle="modal" href="#myModal" id="signUP" onclick="openModal()">
+       Sign Up
+      </a>
+     </div>
+     <div class="text-center" id="divLogin">
+      <a class="btn btn-info" data-toggle="modal" href="#loginModal" id="logIN" onclick="openModal()">
+       Login
+      </a>
+     </div>
+    </ul>
+   </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+   <div class="container;float:left;">
+    <h1>
+     Welcome to Mealbot!
+    </h1>
+   </div>
+  </div>
+  <div class="container-fluid">
+   <div class="carousel slide" data-ride="carousel" id="carousel-example" style="top:20%; position:fixed; left: 40%;">
+    <div class="carousel-inner row w-100 mx-auto" role="listbox">
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+      <img alt="img1" class="img-fluid mx-auto d-block" src="/static/pizza.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img2" class="img-fluid mx-auto d-block" src="/static/nachos.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img3" class="img-fluid mx-auto d-block" src="/static/sushi.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img4" class="img-fluid mx-auto d-block" src="/static/steak_bellpeppers.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img5" class="img-fluid mx-auto d-block" src="/static/curry.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img6" class="img-fluid mx-auto d-block" src="/static/meats_rice.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img7" class="img-fluid mx-auto d-block" src="/static/kalita_grill.jpg" style="width: 100%; height:auto;"/>
+     </div>
+     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+      <img alt="img8" class="img-fluid mx-auto d-block" src="/static/bistro_food.jpg" style="width: 100%; height:auto;"/>
+     </div>
+    </div>
+    <a class="carousel-control-prev" data-slide="prev" href="#carousel-example" role="button">
+     <span aria-hidden="true" class="carousel-control-prev-icon">
+     </span>
+     <span class="sr-only">
+      Previous
+     </span>
+    </a>
+    <a class="carousel-control-next" data-slide="next" href="#carousel-example" role="button">
+     <span aria-hidden="true" class="carousel-control-next-icon">
+     </span>
+     <span class="sr-only">
+      Next
+     </span>
+    </a>
+   </div>
+  </div>
+  <div class="modal fade" id="myModal">
+   <div class="modal-dialog modal-login">
+    <div class="modal-content">
+     <div class="modal-header">
+      <div class="avatar">
+       <img alt="Avatar" src="https://www.tutorialrepublic.com/examples/images/avatar.png"/>
+      </div>
+      <h4 class="modal-title">
+       Sign Up page
+      </h4>
+      <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+       &times;
+      </button>
+     </div>
+     <div class="modal-body">
+      <form action="/profilePage" method="POST">
+       <div class="form-group">
+        <input class="form-control" name="username" placeholder="Username" required="required" type="text"/>
+       </div>
+       <div class="form-group">
+        <input class="form-control" name="firstName" placeholder="First Name" required="required" type="text"/>
+       </div>
+       <div class="form-group">
+        <input class="form-control" name="lastName" placeholder="Last Name" required="required" type="text"/>
+       </div>
+       <div class="form-group">
+        <input class="form-control" id="psw" name="password" placeholder="Password" required="required" type="password"/>
+       </div>
+       <div class="form-group">
+        <input class="form-control" id="cpsw" name="confirm password" placeholder="Confirm Password" required="required" type="password"/>
+       </div>
+       <div class="form-group">
+        <button class="btn btn-primary btn-block login-btn" disabled="" id="my_submit_button" onclick="onClickFunction()">
+         Sign Up
+        </button>
+       </div>
+      </form>
+     </div>
+     <div class="modal-footer">
+      <div id="message" style="display:block">
+       <h3>
+        Password must contain the following:
+       </h3>
+       <p class="invalid" id="letter">
+        A
+        <b>
+         lowercase
+        </b>
+        letter
+       </p>
+       <p class="invalid" id="capital">
+        A
+        <b>
+         capital (uppercase)
+        </b>
+        letter
+       </p>
+       <p class="invalid" id="number">
+        A
+        <b>
+         number
+        </b>
+       </p>
+       <p class="invalid" id="length">
+        Minimum
+        <b>
+         8 characters
+        </b>
+       </p>
+       <p class="invalid" id="match">
+        Password and Confirm Password Match
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="modal fade" id="loginModal">
+   <div class="modal-dialog modal-login">
+    <div class="modal-content">
+     <form action="/profilePage" method="POST">
+      <div class="modal-header">
+       <div class="avatar">
+        <img alt="Avatar" src="https://www.tutorialrepublic.com/examples/images/avatar.png"/>
+       </div>
+       <h4 class="modal-title">
+        Log In
+       </h4>
+       <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+        &times;
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="form-group">
+        <input class="form-control" name="userName" placeholder="User Name" required="required" type="text"/>
+       </div>
+       <div class="form-group">
+        <input class="form-control" name="password" placeholder="Password" required="required" type="password"/>
+       </div>
+       <div class="form-group">
+        <button class="btn btn-primary btn-block login-btn" id="my_submit_button1" onclick="onClickFunction()">
+         Login
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+<form action="/homepage" method="POST">
+ <div class="wrapper">
+  <div class="search_box">
+   <div class="dropdown">
+    <div class="default_option">
+     All
+    </div>
+    <ul>
+     <li>
+      Allergies
+     </li>
+     <input class="input" id="dairyAllergy" name="Dairy" style="
+
+  vertical-align: bottom;
+" type="checkbox"/>
+     <label for="dairyAllergy" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Dairy
+     </label>
+     <input class="input" id="peanutAllergy" name="Peanuts" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <br/>
+     <label for="peanutAllergy" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Peanuts
+     </label>
+     <input class="input" id="soyAllergy" name="Soy" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <label for="soyAllergy" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Soy
+     </label>
+     <li>
+      Cuisine
+     </li>
+     <input class="input" id="AmericanType" name="American" style="
+
+  vertical-align: bottom;
+" type="checkbox"/>
+     <label for="AmericanType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      American
+     </label>
+     <input class="input" id="ItalianType" name="Italian" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <br/>
+     <label for="ItalianType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Italian
+     </label>
+     <input class="input" id="IndianType" name="Indian" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <label for="IndianType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Indian
+     </label>
+     <input class="input" id="JapaneseType" name="Japanese" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <label for="JapaneseType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Japanese
+     </label>
+     <input class="input" id="ArgentinianType" name="Argentinian" style="
+
+  vertical-align: bottom; right: 20px;" type="checkbox"/>
+     <label for="ArgentinianType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Argentinian
+     </label>
+     <input class="input" id="GreekType" name="Greek" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <label for="GreekType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Greek
+     </label>
+     <input class="input" id="SpanishType" name="Spanish" style="
+
+  vertical-align: bottom;" type="checkbox"/>
+     <label for="SpanishType" style="display: block;
+           position : relative;
+  text-indent: -15px;
+bottom: 30px;">
+      Spanish
+     </label>
+     <li>
+      Budget
+     </li>
+     <input class="input" name="maxPrice" placeholder="Enter Max Meal Price" type="text"/>
+    </ul>
+   </div>
+   <div class="search_field">
+    <input class="input" name="searchBar_input" placeholder="Search" src="/static/search_glass.png" type="text"/>
+    <form action="/homepage/randomMeal" method="POST">
+     <button class="btn btn-outline" type="button">
+      <input class="btn btn-outline" type="submit" value="Random Meal">
+      </input>
+     </button>
+    </form>
+   </div>
+  </div>
+ </div>
+</form>
+<div id="cardResult">
+ <div class="row">
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Curds
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: White curds flown in from Ellsworth, Wisconsin, fried in a light crisp breading. Served with Attic Ranch
+    </p>
+    <p>
+     Price: $9.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Spuds
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Choice of either Hand-Cut Fries or Tots
+    </p>
+    <p>
+     Price: $4.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Chicken Tenders
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Marinated strips of chicken breast, breaded and lightly fried. Served with Attic Ranch
+    </p>
+    <p>
+     Price: $10.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Sliders
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Choose from Classic Cheeseburger, French Dip, Buffalo Chicken, Ham &amp; Cheese or Bistro BBQ Pork
+    </p>
+    <p>
+     Price: $11.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Hummus Plate
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Attic's own hummus topped with roasted red peppers. Served with toasted pita
+    </p>
+    <p>
+     Price: $8.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Wings
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Buffalo, Jerk, Bistro BBQ, Sweet Chili or Volcano style wings. Served with Bleu Cheese dressing
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Nachos
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: House-Made corn tortilla chips topped with Attic cheese blend, black bean &amp; corn salsa, jalape&ntilde;os and topped with sour cream
+    </p>
+    <p>
+     Price: $11.75
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Quesadilla
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Attic cheese blend melted in flour tortillas. Served with Walnut St. salsa and chipotle aioli
+    </p>
+    <p>
+     Price: $8.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Pretzels
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Hot and soft salted pretzels locally made by our friends at Das Pretzel. Served with German mustard
+    </p>
+    <p>
+     Price: $9.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Cobb Salad
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Mixed greens topped with bacon, hard boiled egg, avocado, Attic cheese blend, grilled chicken, roasted red peppers and julienne carrots. Served with your choice of dressing
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Blackened Chicken Caesar
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Full-sized Caesar salad tossed with our house-made dressing, made from scratch croutons, asiago cheese and topped with blackened grilled chicken
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Southwest Chicken Salad
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Mixed greens tossed with blackened chicken, black bean &amp; corn salsa, julienne carrots and cheddar cheese. Topped with corn tortilla strips and a side of 949 Jalape&ntilde;o Ranch
+    </p>
+    <p>
+     Price: $13.50
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     House Salad
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Mixed greens topped with julienne carrots, sliced cucumbers, diced tomato and croutons
+    </p>
+    <p>
+     Price: $4.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Caesar Salad
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Fresh romaine hearts tossed with house-made dressing, croutons and asiago cheese
+    </p>
+    <p>
+     Price: $4.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Jalape&ntilde;o Corn Chowder
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: None
+    </p>
+    <p>
+     Price: $5.00
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Bistro Pork Green Chili
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: None
+    </p>
+    <p>
+     Price: $5.00
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Wisco Cheddar and Broccoli
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: None
+    </p>
+    <p>
+     Price: $5.00
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Classic
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Hand-pattied ground beef cooked to your liking
+    </p>
+    <p>
+     Price: $11.25
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Bucky
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: American, Cheddar, and Swiss Cheeses with smoked bacon
+    </p>
+    <p>
+     Price: $13.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Attic
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Smoked bacon, caramelized onions and provolone cheese
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     GSM
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Sauteed mushrooms blanketed with gorgonzola and swiss cheese
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     BBQ Bacon Cheddar
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Smoked bacon, cheddar cheese and just the right amount of Bistro BBQ sauce
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Graceland
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Take care of business with crispy fried onion straws, a heap of slaw and American cheese
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Bucky Supreme
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Same deliciousness as the Bucky, but sandwiched between two grilled cheese sandos as the bun
+    </p>
+    <p>
+     Price: $17.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     South of the Border
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: A bun-less burger with melted cheddar and jack cheese smothered in our Bistro Pork Green Chili
+    </p>
+    <p>
+     Price: $12.50
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Patty Melt
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Grilled on the flat top with swiss, sauteed onions and thousand island on griddled marble rye
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Burger of the Week
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Ask your server what the Bistro is serving up
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Bistro Club
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Turkey, ham, bacon, lettuce, tomato, cheddar and light mayo on sourdough
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     BBQ Pulled Pork
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Slow roasted pulled pork combined with Bistro BBQ sauce topped with creamy cole slaw on a toasted bun
+    </p>
+    <p>
+     Price: $11.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Attic Cheesesteak
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Thinly shaved grilled sirloin with sauteed onions, red peppers and melted American cheese
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Crispy Chicken Tender Wrap
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Attic chicken tenders with lettuce, tomato, Bistro cheese blend and Attic Ranch. (Sub Buffalo style with Bleu Cheese)
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Wisco Brat
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Pabst Blue Ribbon beer boiled bratwurst grilled on a toasted pretzel bun and a side of German mustard
+    </p>
+    <p>
+     Price: $10.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Chipotle Chicken
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Spicy grilled chicken with lettuce, tomato, bacon, chipotle aioli and pepper jack cheese on a toasted bun
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Hum-V
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Attic's own hummus with red peppers, onions, cucumber, lettuce and tomato wrapped in a spinach tortilla
+    </p>
+    <p>
+     Price: $11.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Reuben
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Thinly shaved pastrami, thousand island, swiss cheese and sauerkraut on griddled marble rye. (Sub Turkey Upon Request)
+    </p>
+    <p>
+     Price: $12.50
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     BLTA
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Bacon, lettuce, tomato &amp; avocado on fresh baked lightly toasted sourdough
+    </p>
+    <p>
+     Price: $11.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Papa Bear's Meatloaf
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Seasoned home-style meatloaf, made with onions, tomato puree and toasted breadcrumbs. Topped with hickory ketchup. Served with slaw and your choice of steamed veggies or fries
+    </p>
+    <p>
+     Price: $14.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Wisconsin Mac &amp; Cheese
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Macaroni noodles tossed in our own Attic/Wisco cheese blend, topped with bread crumbs and baked
+    </p>
+    <p>
+     Price: $12.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Fish &amp; Chips
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: Lightly breaded cod served with hand-cut fries, house-made tartar and cole slaw
+    </p>
+    <p>
+     Price: $14.95
+    </p>
+   </div>
+  </div>
+  <div class="column">
+   <div class="card" style="margin: 20px;background-color: lightblue;width: 300px;border: 15px;padding: 50px;">
+    <h3>
+     Brownie &amp; Cream
+    </h3>
+    <p>
+     Restaurant: Attic_Bar
+    </p>
+    <p>
+     Description: A warm, ultra rich and chewy double chocolate Ghirardelli brownie topped with vanilla ice cream
+    </p>
+    <p>
+     Price: $5.25
+    </p>
+   </div>
+  </div>
+ </div>
+</div>

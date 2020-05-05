@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>reviewPage.html</title>
+    <title>homePage.html</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -12,12 +12,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-    table, th, td {
+  table, th, td {
       border: 1px solid black;
     }
     body{
       font-family: 'Varela Round', sans-serif;
-      background: #e4eefa;
+      background: url('/static/background_food.jpg');
     }
     .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -296,86 +296,119 @@ input[type=submit] {
     </style>
 
   </head>
+<body>
 
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
       <a class="navbar-brand" href="homePage.html">
-      <img class="rounded-circle" src="../resources/img/cu_boulder_logo.jpg" alt="" width="30" height="30">
+      <img class="rounded-circle" src="../resources/img/robotlogo.jpg" alt="logo" width="40" height="40">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
+            <form action="/homepage" method="POST">
           <li class="nav-item">
-            <a class="nav-link" href="homePage.html">Home Page</a>
+            <a class="nav-link" href="homepage">Home Page</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="reviewPage.html">Review a Meal</a>
+            </form>
+            <form action="/reviewPage" method="POST">
+          <li class="nav-item">
+
+            <a class="nav-link" href="reviewPage">Review a Meal</a>
           </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="profilePage.html">Profile Page</a>
-            </li>
-            <div class="text-center">
-              <a href="#myModal" class="btn btn-info" data-toggle="modal" onclick="openModal()">Login/Sign Up</a>
-            </div>
-            </ul>
+            </form>
+        </ul>
+        <ul class="navbar-nav">
+            <form action="/profilePage" method="POST">
+          <li class="nav-item active mr-sm-2">
+            <a class="nav-link" href="profilePage">Profile Page</a>
+          </li>
+            </form>
+          <div class="text-center mr-sm-2" id="divSignUP">
+            <a href="#myModal" id="signUP" class="btn btn-info" data-toggle="modal" onclick="openModal()">Sign Up</a>
+          </div>
+          <div class="text-center" id="divLogin">
+            <a href="#loginModal" id="logIN" class="btn btn-info" data-toggle="modal" onclick="openModal()">Login</a>
+          </div>
+        </ul>
       </div>
+
     </nav>
+<div class="jumbotron">
+  <h1>Review a Meal!</h1>
+
+</div>
+ <form action = '/reviewPage/results' method = 'POST'>
+<div class="search_field">
+        <input type="text" name="inputRes" placeholder="Enter in Restaurant Name:">
+</div>
+     <div class = "search_field">
+        <input type="text" name="inputDish" placeholder="Enter in Dish Name:">
+      
+</div>
+ <input type="submit" value="Submit">
+ </form>
+<br><br>
+<h4>&nbsp;&nbsp;&nbsp;List of meals you have had from here:</h4>
+
+<div id="container" style="width:1200px; margin: auto;">
 
 
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-login">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="avatar">
-            <img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
-          </div>
-          <h4 class="modal-title">Sign Up page</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <input type="text" class="form-control" name="firstName" placeholder="First Name"
-              required="required">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="lastName" placeholder="Last Name"
-              required="required">
-          </div>
-          <div class="form-group">
-            <input id="psw" type="password" class="form-control" name="password" placeholder="Password"
-              required="required">
-          </div>
-          <div class="form-group">
-            <input id="cpsw" type="password" class="form-control" name="confirm password"
-              placeholder="Confirm Password" required="required">
-          </div>
-          <div class="form-group">
-            <button id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled
-              onClick="onClickFunction()">Sign Up</button>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div id="message" style="display:block">
-            <h3>Password must contain the following:</h3>
-            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-            <p id="number" class="invalid">A <b>number</b></p>
-            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            <p id="match" class="invalid">Password and Confirm Password Match</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="pic" style="background-color:#FFD700;height:200px;width:200px;float:left;">
+  <img src="/static/burger.jpg" alt="Dish Pic" style="width:200px;height:200px;background-color:#E5290E;">
+</div>
 
-  </body>
+<div id="content" style="background-color:#EEEEEE;height:200px;width:1000px;float:left;">
+<label style="margin:30px;" id='dishName'>Dish Name</label>
+<label style="margin:30px;" id='priceName'>Price</label>
+<label style="margin:30px;"id ='descriptionName'>Description</label>
+
+
+</div>
+
+
+
+<div id="content" style="background-color:#EEEEEE;height:300px;width:1200px;float:left;">
+
+
+<div id="rate" style="width:300px;height: 300px; float: left;">
+<h5 style="float: left; margin:30px;">Your Rating On the Dish</h5>
+<div class="rating" style="margin:30px">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+</div>
+
+
+<div  style="height:300px;width:800px;float:left;">
+<br>
+<label>Your Thoughts On the Dish:</label>
+<br>
+
+  <textarea id="com" rows="8" cols="115"></textarea>
+
+  <br>
+  <button type="button" style="width: 180px;
+  height: 32px;
+  float: right;
+  background: black;
+  color: white;
+  text-align: center;">Save Review</button>
+
+</div>
+
+</div>
+
+<div id="footer" style="height:200px;background-color:#FFA500;clear:both;text-align:left;">
+ <h5 style="margin:30px; float:left;">More Dishes You've Ordered From Here:</h5>
+
+</div>
+
+</div>
+<br><br><br><br>
+</body>
 
 </html>
