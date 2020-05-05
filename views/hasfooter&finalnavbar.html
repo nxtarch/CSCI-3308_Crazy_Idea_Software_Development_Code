@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>profilePage.html</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../resources/css/pagestyles.css">
+    <script type="text/javascript" src="../resources/js/login.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+      <a class="navbar-brand" href="homePage.html">
+      <img class="rounded-circle" src="../resources/img/robotlogo.jpg" alt="logo" width="40" height="40">
+      </a>
+      <a class="navbar-brand" href="homePage.html">
+      <img  src="../resources/img/mealbot_logo.png" alt="logo" width="90px" height="20px">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="reviewPage.html">Review a Meal</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item active mr-sm-2">
+            <a class="nav-link" href="profilePage.html">Profile</a>
+          </li>
+
+          <button type="button" class="btn btn-dark mr-sm-2" data-toggle="modal" data-target="#myModal" id="signupModalButton" onClick="openModal()">sign up</button>
+          <button type="button" class="btn btn-dark" id="loginModalButton" onClick="loginClick()">login</button>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container;float:left;">
+          <h1>Your Profile</h1>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="padding:0px">
+        <div class="short-div">
+          <div class="card">
+            <div class="card-header">
+              Username: *username*
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-dark mb-2" id="changeUsernamebtn" onClick="changeUserName()">Change Username</button>
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="New Username"
+                  required="required" id="newUsernameForm" disabled>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="Confirm New Username"
+                  required="required" id="confirmUsernameForm" disabled>
+              </div>
+              <button type="button" class="btn btn-dark" id="saveUsernamebtn" disabled onClick="saveUserName()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+        <div class="short-div" style="padding-top:20px";>
+          <div class="card">
+            <div class="card-header">
+              Change your password?
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-dark mb-2" id="changePSWbtn" onClick="changePSW()">Change Password</button>
+              <div class="form-group mb-4">
+                <input type="text" class="form-control" name="password" placeholder="Current Password"
+                  required="required" id="currPswForm" disabled>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="New Password"
+                  required="required" id="newPswForm" disabled>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="Confirm New Password"
+                  required="required" id="confirmPswForm" disabled>
+              </div>
+              <button type="button" class="btn btn-dark"id="savePSWbtn" disabled onClick="savePSW()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="card">
+          <div class="card-header">
+            Your Allergies & Preferences
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                  <h6>
+                    Allergies:
+                  </h6>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" id="dairyBox" value="" disabled>Dairy
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" id="nutsBox" value="" disabled>Nuts
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" id="seafoodBox" value="" disabled>Seafood
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" id="glutenBox" value="" disabled>Gluten
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" id="soyBox" value="" disabled>Soy
+                        </label>
+                      </div>
+              </div>
+              <div class="col-sm-6">
+                <h6>
+                  Preferences:
+                </h6>
+                <form action="/action_page.php">
+                  <div class="form-group">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" id="vegetarianBox" value="" disabled>Vegetarian
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" id="veganBox" value="" disabled>Vegan
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" id="kosherBox" value="" disabled>Kosher
+                    </label>
+                  </div>
+                </div>
+                </form>
+              </div>
+              <button type="button" class="btn btn-dark mr-sm-2" id="changePreferencesbtn" onClick="changePrefs()">Change Settings</button>
+              <button type="button" class="btn btn-dark" id="savePreferencesbtn" onClick="savePrefs()"disabled>Save Changes</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="myModal" class="modal fade">
+  		<div class="modal-dialog modal-login">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<div class="avatar">
+  						<img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
+  					</div>
+  					<h4 class="modal-title">Sign Up</h4>
+  					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				</div>
+  				<div class="modal-body">
+  					<div class="form-group">
+  						<input id = "first" type="text" class="form-control" name="firstName" placeholder="First Name"
+  							required="required">
+  					</div>
+  					<div class="form-group">
+  						<input id = "last" type="text" class="form-control" name="lastName" placeholder="Last Name"
+  							required="required">
+  					</div>
+  					<div class="form-group">
+  						<input id = "user" type="text" class="form-control" name="userName" placeholder="Username"
+  							required="required">
+  					</div>
+  					<div class="form-group">
+  						<input id = "email" type="text" class="form-control" name="emailAddress" placeholder="Email Address"
+  							required="required">
+  					</div>
+  					<div class="form-group">
+  						<input id="psw" type="password" class="form-control" name="password" placeholder="Password"
+  							required="required">
+  					</div>
+  					<div class="form-group">
+  						<input id="cpsw" type="password" class="form-control" name="confirm password"
+  							placeholder="Confirm Password" required="required">
+  					</div>
+  					<div class="form-group">
+  						<button id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled
+  							onClick="onClickFunction()">Sign Up</button>
+  					</div>
+  				</div>
+  				<div class="modal-footer">
+  					<div id="message" style="display:block">
+  						<h3>Password must contain the following:</h3>
+  						<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  						<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  						<p id="number" class="invalid">A <b>number</b></p>
+  						<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  						<p id="match" class="invalid">Password and Confirm Password Match</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+
+    <div id="loginModal" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="avatar">
+              <img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
+            </div>
+            <h4 class="modal-title">Log In</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" name="userName" placeholder="User Name"
+                required="required">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="password" placeholder="Password"
+                required="required">
+            </div>
+            <div class="form-group">
+              <button id="my_submit_button" class="btn btn-dark btn-block login-btn"
+                onClick="login()">Log In</button>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+
+  <footer class="page-footer">
+    <div class="row" >
+      <div class="col-sm-3">
+      <ul class="list-group">
+          <p>Our Contributors:</p>
+          <br>
+          <p>Malik Tefridj</p>
+          <p>Huajian Qiao</p>
+          <p>Wanglibo Chen</p>
+          <p>Joe Petrafeso-Crosby</p>
+        </ul>
+      </div>
+      <div class="col-sm-2 text-center">
+      <ul class="list-group">
+          <p>Our Github Repos:</p>
+          <br>
+          <a href="https://github.com/nxtarch/CSCI-3308_Crazy_Idea_Software_Development_Code">Our Code</a>
+          <a href="https://github.com/nxtarch/CSCI-3308_Crazy_Idea_Software_Development_Milestones">Our Code</a>
+          <a href="https://github.com/nxtarch/CSCI-3308_Crazy_Idea_Software_Development_Team_Logs">Our Logs</a>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <a class="navbar-brand" href="homePage.html">
+        <img class="rounded-circle" src="../resources/img/robotlogo.jpg" alt="logo" width="100" height="100">
+      </a>
+    </div>
+    <div class="row justify-content-center">
+      <a class="navbar-brand" href="homePage.html">
+        <a class="navbar-brand" href="homePage.html">
+        <img  src="../resources/img/mealbot_logo.png" alt="logo" width="140px" height="40px">
+        </a>
+      </a>
+    </div>
+
+  </footer>
+
+  </body>
+</html>
